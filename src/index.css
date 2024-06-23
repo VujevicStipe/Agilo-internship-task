@@ -1,3 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    font-family: "Baloo 2", sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+  
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #555;
+}
+h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #777;
+}
+h4 {
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #000000;
+}
+p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+}
