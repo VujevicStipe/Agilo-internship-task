@@ -6,7 +6,7 @@ import BurgerMenu from "./components/BurgerMenu";
 
 const HeaderComponent: React.FC = () => {
   return (
-    <div className="w-full h-auto flex items-center justify-between py-5 child:min-w-7">
+    <div className="w-full h-auto px-4 flex items-center justify-between py-5 child:min-w-7">
       <BurgerMenu />
       <NavLink to={"./"}>
         <img className="ml-16" src={logo} alt="logo" />

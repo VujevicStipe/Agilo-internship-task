@@ -9,7 +9,7 @@ import { FaTiktok } from "react-icons/fa";
 
 const FooterComponent: React.FC = () => {
   return (
-    <div className="w-full h-fit flex flex-col justify-start items-start my-12 child:mb-8 md:flex-row md:justify-between md:items-start">
+    <div className="w-full h-fit px-4 flex flex-col justify-start items-start my-12 child:mb-8 md:flex-row md:justify-between md:items-start">
       <img className="w-48 h-auto" src={logo} alt="logo" />
       <div className="w-fit h-fit flex flex-col child:mb-8 sm:flex-row sm:not-last-child:mr-12">
         <div className="flex flex-col items-start min-w-36">
