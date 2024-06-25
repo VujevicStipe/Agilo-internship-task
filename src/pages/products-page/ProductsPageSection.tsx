@@ -21,7 +21,6 @@ const ProductsPageSection: React.FC = () => {
         <div className="grid grid-cols-4 gap-2">
           <div className="w-full col-span-1">filteri</div>
           <div className="w-full col-span-3">
-            {" "}
             <ProductsGrid>
               {products?.map((item, index) => (
                 <ProductCard key={index} product={item} />

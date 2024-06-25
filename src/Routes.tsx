@@ -14,7 +14,7 @@ function Root() {
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route
-            path="/products/details/:id"
+            path="/product/:id"
             element={<ProductDetailsPage />}
           />
         </Route>
