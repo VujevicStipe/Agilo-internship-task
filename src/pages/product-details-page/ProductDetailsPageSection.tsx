@@ -9,11 +9,6 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
     return null;
   }
 
-  useEffect(() => {
-    console.log(id)
-    console.log(defineID(id))
-  }, [])
-
   const [product, setProduct] = useState<Product>();
   const apiUrl = import.meta.env.VITE_API_URL;
   useEffect(() => {
@@ -23,10 +18,6 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
       .then((res) => setProduct(res.data))
       .catch((err) => console.log(err));
   }, []);
-
-  useEffect(() => {
-    console.log(product);
-  }, [product]);
 
   return <div>ProductDetailsPageSection</div>;
 };
