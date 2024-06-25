@@ -14,19 +14,31 @@ export default {
       colors: {
         primary: "#ffffff",
         secondary: "#000000",
-        purple: "#AA92C2"
+        purple: "#AA92C2",
       },
     },
   },
   plugins: [
-    function ({ addVariant }) {
+    function ({ addUtilities, addVariant, addBase, theme }) {
       addVariant("child", "& > *");
       addVariant("last-child", "& > *:last-child");
       addVariant("child-hover", "& > *:hover");
       addVariant("not-last-child", "& > *:not(:last-child)");
       addVariant("not-first-child", "& > *:not(:first-child)");
-    },
-    function ({ addBase, theme }) {
+
+      addUtilities({
+        ".container": {
+          "@apply w-full h-fit flex flex-col items-center child:mb-14": {},
+        },
+        ".wrapper": {
+          "@apply w-full max-w-1350 h-fit flex flex-col px-4 child:mb-14": {},
+        },
+        ".absolute-center": {
+          "@apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2":
+            {},
+        },
+      });
+
       addBase({
         h1: {
           fontSize: theme("fontSize.3xl"),
@@ -81,6 +93,18 @@ export default {
           },
         },
         h5: {
+          fontSize: theme("fontSize.m"),
+          "@screen sm": {
+            fontSize: theme("fontSize.m"),
+          },
+          "@screen md": {
+            fontSize: theme("fontSize.l"),
+          },
+          "@screen lg": {
+            fontSize: theme("fontSize.l"),
+          },
+        },
+        h6: {
           fontSize: theme("fontSize.s"),
           "@screen sm": {
             fontSize: theme("fontSize.s"),
@@ -89,7 +113,7 @@ export default {
             fontSize: theme("fontSize.m"),
           },
           "@screen lg": {
-            fontSize: theme("fontSize.l"),
+            fontSize: theme("fontSize.m"),
           },
         },
       });

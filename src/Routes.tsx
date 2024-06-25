@@ -3,15 +3,20 @@ import HomePage from "./routes/HomePage";
 import Layout from "./layout/Layout";
 import ProductsPage from "./routes/ProductsPage";
 import ProductDetailsPage from "./routes/ProductDetailsPage";
+import ScrollToTop from "./util/ScrollToTop";
 
 function Root() {
   return (
     <>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/products" element={<ProductsPage />} />
-          <Route path="/products/details/:id" element={<ProductDetailsPage />} />
+          <Route
+            path="/products/details/:id"
+            element={<ProductDetailsPage />}
+          />
         </Route>
       </Routes>
     </>

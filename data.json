@@ -1,0 +1,75 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "brand": "Medusa",
+            "type": "T-Shirt",
+            "colors": [
+                "Black",
+                "White",
+                "Red"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "price": 49.99
+        },
+        {
+            "id": 2,
+            "brand": "Medusa",
+            "type": "Sweatshirt",
+            "colors": [
+                "Grey",
+                "Black"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "price": 89.99
+        },
+        {
+            "id": 3,
+            "brand": "Medusa Accessories",
+            "type": "Backpack",
+            "colors": [
+                "Black",
+                "White",
+                "Red"
+            ],
+            "price": 59.99
+        },
+        {
+            "id": 4,
+            "brand": "Medusa Accessories",
+            "type": "Cap",
+            "colors": [
+                "Grey",
+                "Black",
+                "White"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "price": 59.99
+        },
+        {
+            "id": 5,
+            "brand": "Medusa Accessories",
+            "type": "Bag",
+            "colors": [
+                "Black",
+                "White"
+            ],
+            "price": 59.99
+        }
+    ]
+}
