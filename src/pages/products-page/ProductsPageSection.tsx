@@ -5,6 +5,7 @@ import axios from "axios";
 import ProductCard from "../../components/ProductCard";
 
 const ProductsPageSection: React.FC = () => {
+  
   const [products, setProducts] = useState<Product[]>();
   const apiUrl = import.meta.env.VITE_API_URL;
   useEffect(() => {

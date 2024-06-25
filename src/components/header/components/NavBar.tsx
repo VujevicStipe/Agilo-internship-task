@@ -6,7 +6,7 @@ import { HiOutlineShoppingBag } from "react-icons/hi2";
 
 const NavBar: React.FC = () => {
   return (
-    <div className='hidden sm:flex w-fit items-center justify-between child:ml-4 child:h-5 child:w-5 '>
+    <div className='hidden sm:flex w-fit items-center justify-between child:ml-4 child:h-5 child:w-5 child:cursor-pointer '>
         <LuUser2 />
         <LuBell />
         <LuHeart />

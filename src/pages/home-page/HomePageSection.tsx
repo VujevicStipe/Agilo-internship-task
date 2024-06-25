@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
+import { shuffle } from 'lodash';
 import Banner from "./components/hero/Hero";
 import Testimonal from "./components/Testimonal";
 import FeaturedProducts from "../../components/FeaturedProducts";
-import axios from "axios";
 import ProductCard from "../../components/ProductCard";
 
 const HomePageSection: React.FC = () => {
@@ -15,6 +16,8 @@ const HomePageSection: React.FC = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  const shuffledProducts = shuffle(products).slice(0,4);
+
   return (
     <div className="container">
       <Banner />
@@ -24,8 +27,8 @@ const HomePageSection: React.FC = () => {
           title="Popular items"
           subTitle="From our Medusa apparel"
         >
-          {products?.slice(0, 4).map((item) => (
-            <ProductCard key={item.type} product={item} />
+          {shuffledProducts?.map((item: Product) => (
+            <ProductCard key={item.id} product={item} />
           ))}
         </FeaturedProducts>
       </div>

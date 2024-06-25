@@ -15,6 +15,7 @@ export default {
         primary: "#ffffff",
         secondary: "#000000",
         purple: "#AA92C2",
+        card: "#F7F7FA"
       },
     },
   },
@@ -25,6 +26,7 @@ export default {
       addVariant("child-hover", "& > *:hover");
       addVariant("not-last-child", "& > *:not(:last-child)");
       addVariant("not-first-child", "& > *:not(:first-child)");
+      addVariant("last-child", "& > *:last-child");
 
       addUtilities({
         ".container": {
@@ -36,6 +38,9 @@ export default {
         ".absolute-center": {
           "@apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2":
             {},
+        },
+        ".absolute-vertical-center": {
+          "@apply absolute top-1/2 transform -translate-y-1/2": {},
         },
       });
 
@@ -70,6 +75,8 @@ export default {
         },
         h3: {
           fontSize: theme("fontSize.2xl"),
+          fontWeight: theme("fontWeight.light"),
+          lineHeight: theme("lineHeight.tight"),
           "@screen sm": {
             fontSize: theme("fontSize.2xl"),
           },

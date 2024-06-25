@@ -4,6 +4,7 @@
             "id": "1",
             "brand": "Medusa",
             "type": "T-Shirt",
+            "description": "The Medusa T-Shirt is made from a heavyweight, overdyed jersey, featuring contrasting mesh panels on each side that match the logo embroidery on the back.",
             "colors": [
                 "Black",
                 "White",
@@ -15,12 +16,14 @@
                 "L",
                 "XL"
             ],
-            "price": 49.99
+            "price": 49.99,
+            "material": "70% cotton 30% polyester"
         },
         {
             "id": "2",
             "brand": "Medusa",
             "type": "Sweatshirt",
+            "description": "The Medusa Sweatshirt is made from a heavyweight, overdyed jersey, featuring contrasting mesh panels on each side that match the logo embroidery on the back.",
             "colors": [
                 "Grey",
                 "Black"
@@ -31,23 +34,27 @@
                 "L",
                 "XL"
             ],
-            "price": 89.99
+            "price": 89.99,
+            "material": "50% cotton 50% polyester"
         },
         {
             "id": "3",
             "brand": "Medusa Accessories",
             "type": "Backpack",
+            "description": "The Medusa Backpack features durable materials and multiple compartments for all your essentials.",
             "colors": [
                 "Black",
                 "White",
                 "Red"
             ],
-            "price": 59.99
+            "price": 59.99,
+            "material": "90% cotton 10% polyester"
         },
         {
             "id": "4",
             "brand": "Medusa Accessories",
             "type": "Cap",
+            "description": "The Medusa Cap is made from premium materials and features an adjustable strap for a comfortable fit.",
             "colors": [
                 "Grey",
                 "Black",
@@ -59,27 +66,32 @@
                 "L",
                 "XL"
             ],
-            "price": 59.99
+            "price": 59.99,
+            "material": "60% cotton 40% polyester"
         },
         {
             "id": "5",
             "brand": "Medusa Accessories",
             "type": "Bag",
+            "description": "The Medusa Bag is perfect for daily use, offering ample space and a stylish design.",
             "colors": [
                 "Black",
                 "White"
             ],
-            "price": 59.99
+            "price": 59.99,
+            "material": "70% cotton 30% polyester"
         },
         {
             "id": "6",
             "brand": "Medusa Accessories",
             "type": "Bag",
+            "description": "The Medusa Bag is perfect for daily use, offering ample space and a stylish design.",
             "colors": [
                 "Black",
                 "White"
             ],
-            "price": 59.99
+            "price": 59.99,
+            "material": "80% cotton 20% polyester"
         }
     ]
 }

@@ -2,10 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
+  const imagePath = `../../public/assets/${product.type}.png`;
   return (
     <Link to={`/product/:${product.id}`}>
       <div className="w-[100%] flex flex-col items-start rounded-lg not-first-child:px-4 text-start">
-        <div className="w-full h-[40rem] sm:h-[35rem] md:h-[30rem] bg-slate-400 rounded-lg"></div>
+        <div className="w-full h-[40rem] sm:h-[35rem] md:h-[30rem] bg-card rounded-lg flex justify-center items-center">
+          <img src={imagePath} alt="" />
+        </div>
         <h5 className="uppercase mt-2 font-bold">
           {product.brand} {product.type}
         </h5>
