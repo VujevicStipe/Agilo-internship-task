@@ -46,18 +46,18 @@ const ProductVariants: React.FC<ProductVariantsProps> = ({
       <div className="relative">
         <div className="absolute-vertical-center left-0">
           {" "}
-          <Button variant="incrementBtn" onClick={onDecrease}>
+          <Button variant="increment" onClick={onDecrease}>
             -
           </Button>
         </div>
         <TextInput name="quantity" onChange={onChange} value={order.quantity} />
         <div className="absolute-vertical-center right-0">
-          <Button variant="incrementBtn" onClick={onIncrease}>
+          <Button variant="increment" onClick={onIncrease}>
             +
           </Button>
         </div>
       </div>
-      <Button variant="secondaryBtn" onClick={onClick}>
+      <Button variant="secondary" onClick={onClick}>
         Add to cart +
       </Button>
     </div>

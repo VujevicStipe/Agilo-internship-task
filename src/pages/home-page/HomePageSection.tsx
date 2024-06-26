@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { shuffle } from 'lodash';
+import { shuffle } from "lodash";
 import Banner from "./components/hero/Hero";
 import Testimonal from "./components/Testimonal";
 import FeaturedProducts from "../../components/FeaturedProducts";
@@ -8,6 +8,7 @@ import ProductCard from "../../components/ProductCard";
 
 const HomePageSection: React.FC = () => {
   const [products, setProducts] = useState<Product[]>();
+  const [featuredProducts, setFeaturedProducts] = useState<Product[]>();
   const apiUrl = import.meta.env.VITE_API_URL;
   useEffect(() => {
     axios
@@ -16,7 +17,10 @@ const HomePageSection: React.FC = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  const shuffledProducts = shuffle(products).slice(0,4);
+  useEffect(() => {
+    const shuffledProducts = shuffle(products).slice(0, 4);
+    setFeaturedProducts(shuffledProducts);
+  }, [products]);
 
   return (
     <div className="container">
@@ -27,7 +31,7 @@ const HomePageSection: React.FC = () => {
           title="Popular items"
           subTitle="From our Medusa apparel"
         >
-          {shuffledProducts?.map((item: Product) => (
+          {featuredProducts?.map((item: Product) => (
             <ProductCard key={item.id} product={item} />
           ))}
         </FeaturedProducts>

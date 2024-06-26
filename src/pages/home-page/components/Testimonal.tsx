@@ -10,7 +10,7 @@ const Testimonal: React.FC = () => {
         <h4>Emily C.</h4>
         <h3>Unleash Your Potential with High-Performance Apparel</h3>
         <Link to="/products">
-          <Button variant="primaryBtn">Find Out</Button>
+          <Button variant="primary">Find Out</Button>
         </Link>
       </div>
       <img

@@ -47,7 +47,7 @@ const Modal: React.FC<ModalComponentProps> = ({
       >
         <div className="flex flex-col w-[60%] h-full item-center justify-center text-start child:mb-2">
           {children}
-          <Button variant="secondaryBtn" onClick={() => setShowModal(false)}>
+          <Button variant="secondary" onClick={() => setShowModal(false)}>
             Close
           </Button>
         </div>

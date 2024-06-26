@@ -6,7 +6,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   return (
     <Link to={`/product/:${product.id}`}>
       <div className="w-[100%] flex flex-col items-start rounded-lg not-first-child:px-4 text-start">
-        <div className="w-full h-[40rem] sm:h-[35rem] md:h-[30rem] bg-card rounded-lg flex justify-center items-center">
+        <div className="w-full h-[35rem] sm:h-[30rem] md:h-[25rem] bg-card rounded-lg flex justify-center items-center">
           <img src={imagePath} alt="" />
         </div>
         <h5 className="uppercase mt-2 font-bold">

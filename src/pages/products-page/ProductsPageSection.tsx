@@ -58,7 +58,7 @@ const ProductsPageSection: React.FC = () => {
     <div className="container">
       <div className="wrapper">
         <Banner title="our collection" />
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-2">
           <div className="w-full col-span-1">
             <TypeFilter title="Collections" onChange={handleTypeChange} />
           </div>

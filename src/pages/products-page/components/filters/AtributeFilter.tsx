@@ -30,7 +30,7 @@ const AtributeFilter: React.FC<AtributeFilterProps> = ({ data, onChange }) => {
   }, [capitalizedBrands]);
 
   return (
-    <div className="flex child:mr-4">
+    <div className="flex mb-4 child:w-[10rem] child:mr-4">
       <SelectInput
         name="size"
         placeholder="Size"

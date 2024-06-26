@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { shuffle } from "lodash";
-import { defineID } from "../../util/defineID";
+import { defineId } from "../../util/defineId";
 import FeaturedProducts from "../../components/FeaturedProducts";
 import ProductCard from "../../components/ProductCard";
 import ProductOverview from "./components/productOverview/ProductOverview";
@@ -17,10 +17,11 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
   //fetching products
   const [product, setProduct] = useState<Product>();
   const [products, setProducts] = useState<Product[]>();
+  const [featuredProducts, setFeaturedProducts] = useState<Product[]>();
   const apiUrl = import.meta.env.VITE_API_URL;
 
   useEffect(() => {
-    const definedID = defineID(id);
+    const definedID = defineId(id);
     axios
       .get(`${apiUrl}/products/${definedID}`)
       .then((res) => setProduct(res.data))
@@ -32,7 +33,11 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
       .catch((err) => console.log(err));
   }, [id]);
 
-  const shuffledProducts = shuffle(products).slice(0, 4);
+  //shuffle products
+  useEffect(() => {
+    const shuffledProducts = shuffle(products).slice(0, 4);
+    setFeaturedProducts(shuffledProducts)
+  }, [products]);
 
   //making an order
   const [order, setOrder] = useState({
@@ -40,10 +45,11 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
     color: "",
     quantity: 1,
   });
-  //reset on product change
+
+  //reset order on route change
   const location = useLocation();
   useEffect(() => {
-    console.log('Pathname changed:', location.pathname);
+    console.log("Pathname changed:", location.pathname);
     setOrder({
       size: "",
       color: "",
@@ -52,9 +58,10 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
   }, [location.pathname]);
 
   useEffect(() => {
-    console.log(order)
-  }, [order])
+    console.log(order);
+  }, [order]);
 
+  //handle order change
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -108,13 +115,17 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
           title="Customers also bought"
           subTitle="From our Medusa apparel"
         >
-          {shuffledProducts?.map((item: Product) => (
+          {featuredProducts?.map((item: Product) => (
             <ProductCard key={item.id} product={item} />
           ))}
         </FeaturedProducts>
       </div>
       <Modal showModal={showModal} setShowModal={setShowModal}>
-        {product && <h2>{product.brand} {product.type}</h2>}
+        {product && (
+          <h2>
+            {product.brand} {product.type}
+          </h2>
+        )}
         {product && <h4>Price{product.price}</h4>}
         {order.size && <h3>Your Size: {order.size}</h3>}
         {order.color && <h3>Your Color: {order.color}</h3>}

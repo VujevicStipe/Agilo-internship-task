@@ -22,7 +22,7 @@ const FeaturedProducts: React.FC<FeaturedProductsProps> = ({
         <div className="flex flex-col items-start justify-center pl-3 pb-20">
           <h3>Explore other</h3>
           <Link to="/products">
-            <Button variant="secondaryBtn">Shop Now</Button>
+            <Button variant="secondary">Shop Now</Button>
           </Link>
         </div>
       </div>

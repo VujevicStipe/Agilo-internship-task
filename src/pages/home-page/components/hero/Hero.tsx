@@ -17,7 +17,7 @@ const Hero: React.FC = () => {
         <h3>FASHION THAT SPEAKS</h3>
         <h1>Style for every story</h1>
         <Link to="/products">
-          <Button variant="primaryBtn">Shop now</Button>
+          <Button variant="primary">Shop now</Button>
         </Link>
       </div>
     </div>

@@ -7,7 +7,15 @@ interface TypeFilterProps {
 }
 
 const TypeFilter: React.FC<TypeFilterProps> = ({ title, onChange }) => {
-  const types = ["T-Shirt", "Sweatshirt", "backpack", "cup", "socks", "phone Case", "bottle"];
+  const types = [
+    "T-Shirt",
+    "Sweatshirt",
+    "backpack",
+    "cup",
+    "socks",
+    "phone Case",
+    "bottle",
+  ];
   const capitalizedTypes = types.map((type) =>
     type
       .split(" ")
@@ -16,15 +24,11 @@ const TypeFilter: React.FC<TypeFilterProps> = ({ title, onChange }) => {
   );
 
   return (
-    <div>
+    <div className="hidden sm:block">
       <h4 className="text-start">{title}</h4>
-      <div className="flex flex-col items-start">
+      <div className="flex flex-col child:min-w-[10rem] items-start">
         {capitalizedTypes.map((type: string) => (
-          <Button
-            key={type}
-            variant="categoryBtn"
-            onClick={() => onChange(type)}
-          >
+          <Button key={type} variant="category" onClick={() => onChange(type)}>
             {type}
           </Button>
         ))}
