@@ -1,30 +1,21 @@
-# React + TypeScript + Vite
+# Medusa Webshop
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Short Description
+This project is a React TypeScript application styled with Tailwind CSS. It includes a homepage acting as a landing page, a product listing page with filtering and collection selection features, and a product detail page where users can customize their orders by selecting size, color, and quantity.
 
-Currently, two official plugins are available:
+![mockup-img](./public/assets/Medusa_Mockup.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Time Spent
+I spent approximately 4 days on this project, totaling around 20-24 hours of work.
 
-## Expanding the ESLint configuration
+## Most Challenging Implementation
+The most challenging part of the project was integrating and becoming used to Tailwind CSS. As it was my first time using Tailwind, I needed to educate myself on its approach to styling components and adapting to utility-first CSS methodology.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Implementation You Are Most Proud Of
+I am particularly proud of the product detail page implementation. It allows users to dynamically select product options like size, color, and quantity, updating the order details in real-time. Implementing this feature required integrating state management effectively and ensuring a smooth user experience.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Project Structure
+- **Folders and Files**: The project is organized into components, pages, and utilities folders, following a modular structure.
+**Shared Layout**: A shared layout component (`Layout.tsx`) is implemented to maintain consistent header, footer, and navigation across all pages.
+- **Technologies Used**: React, TypeScript, Tailwind CSS, React Router for navigation.
+- **Considerations**: During development, I focused on creating reusable components, maintaining clean and readable code, and optimizing performance where possible.
