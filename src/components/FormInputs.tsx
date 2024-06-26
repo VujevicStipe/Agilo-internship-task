@@ -32,6 +32,7 @@ interface SelectInputProps {
   name: string;
   label?: string;
   placeholder: string;
+  value: string;
   options: string[];
   onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
 }
@@ -40,6 +41,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({
   name,
   label,
   placeholder,
+  value,
   options,
   onChange,
 }) => (
@@ -47,6 +49,7 @@ export const SelectInput: React.FC<SelectInputProps> = ({
     <label className="block text-sm font-medium text-gray-700">{label}</label>
     <select
       name={name}
+      value={value}
       onChange={onChange}
       className="mt-1 text-center block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500"
     >

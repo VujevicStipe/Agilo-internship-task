@@ -12,9 +12,7 @@ import Modal from "../../components/modal/Modal";
 const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
   id,
 }) => {
-  if (!id) {
-    return null;
-  }
+  if (!id) return null;
 
   //fetching products
   const [product, setProduct] = useState<Product>();
@@ -45,12 +43,17 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
   //reset on product change
   const location = useLocation();
   useEffect(() => {
+    console.log('Pathname changed:', location.pathname);
     setOrder({
       size: "",
       color: "",
       quantity: 1,
     });
-  }, [location.pathname.length]);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    console.log(order)
+  }, [order])
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -86,10 +89,6 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
   //modal after order
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  useEffect(() => {
-    console.log(order);
-  }, [order]);
-
   return (
     <div className="container">
       <div className="wrapper">
@@ -97,7 +96,7 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
           <ProductOverview product={product}>
             <ProductVariants
               product={product}
-              quantity={order.quantity}
+              order={order}
               onChange={handleChange}
               onIncrease={handleIncrease}
               onDecrease={handleDecrease}

@@ -17,6 +17,23 @@
                 "XL"
             ],
             "price": 49.99,
+            "bodyFit": "Slim fit",
+            "material": "70% cotton 30% polyester"
+        },
+        {
+            "id": "7",
+            "brand": "Medusa",
+            "type": "T-Shirt",
+            "description": "The Medusa T-Shirt is made from a heavyweight, overdyed jersey, featuring contrasting mesh panels on each side that match the logo embroidery on the back.",
+            "colors": [
+                "Yellow"
+            ],
+            "sizes": [
+                "S",
+                "XL"
+            ],
+            "price": 49.99,
+            "bodyFit": "Regular fit",
             "material": "70% cotton 30% polyester"
         },
         {
@@ -35,6 +52,7 @@
                 "XL"
             ],
             "price": 89.99,
+            "bodyFit": "Regular fit",
             "material": "50% cotton 50% polyester"
         },
         {

@@ -3,9 +3,11 @@ import Banner from "./components/Banner";
 import ProductsGrid from "./components/ProductsGrid";
 import axios from "axios";
 import ProductCard from "../../components/ProductCard";
+import TypeFilter from "./components/filters/TypeFilter";
+import AtributeFilter from "./components/filters/AtributeFilter";
 
 const ProductsPageSection: React.FC = () => {
-  
+  //fetching products
   const [products, setProducts] = useState<Product[]>();
   const apiUrl = import.meta.env.VITE_API_URL;
   useEffect(() => {
@@ -15,15 +17,57 @@ const ProductsPageSection: React.FC = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  //filters
+  const [filter, setFilter] = useState<Filter>({
+    type: "",
+    size: "",
+    color: "",
+    brand: "",
+    bodyFit: "",
+  });
+
+  //filter handlers
+  const handleTypeChange = (type: any) => {
+    setFilter({ ...filter, ["type"]: type });
+  };
+  const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFilter({ ...filter, [name]: value });
+  };
+
+  useEffect(() => {
+    console.log(filter);
+  }, [filter]);
+
+  //filter function
+  const filteredProducts = products?.filter((product) => {
+    return (
+      (filter.type === "" ||
+        product.type.toLowerCase() === filter.type.toLowerCase()) &&
+      (filter.size === "" ||
+        (product.sizes && product.sizes.includes(filter.size))) &&
+      (filter.color === "" ||
+        (product.colors && product.colors.includes(filter.color))) &&
+      (filter.bodyFit === "" ||
+        product.bodyFit === filter.bodyFit) &&
+      (filter.brand === "" || product.brand === filter.brand)
+    );
+  });
+
   return (
     <div className="container">
       <div className="wrapper">
         <Banner title="our collection" />
         <div className="grid grid-cols-4 gap-2">
-          <div className="w-full col-span-1">filteri</div>
+          <div className="w-full col-span-1">
+            <TypeFilter title="Collections" onChange={handleTypeChange} />
+          </div>
           <div className="w-full col-span-3">
+            <h3 className="text-start">Our Products</h3>
+            <div className="w-full h-[1px] mb-2 bg-gray-400 rounded-lg"></div>
+            <AtributeFilter data={filter} onChange={handleFilterChange} />
             <ProductsGrid>
-              {products?.map((item, index) => (
+              {filteredProducts?.map((item, index) => (
                 <ProductCard key={index} product={item} />
               ))}
             </ProductsGrid>

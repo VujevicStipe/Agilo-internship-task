@@ -4,7 +4,7 @@ import Button from "../../../../../components/Button";
 
 interface ProductVariantsProps {
   product: Product;
-  quantity: number;
+  order: Order;
   onChange: (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => void;
@@ -15,7 +15,7 @@ interface ProductVariantsProps {
 
 const ProductVariants: React.FC<ProductVariantsProps> = ({
   product,
-  quantity,
+  order,
   onChange,
   onIncrease,
   onDecrease,
@@ -29,6 +29,7 @@ const ProductVariants: React.FC<ProductVariantsProps> = ({
         <SelectInput
           name="size"
           placeholder="Size"
+          value={order.size}
           options={product.sizes}
           onChange={onChange}
         />
@@ -37,6 +38,7 @@ const ProductVariants: React.FC<ProductVariantsProps> = ({
         <SelectInput
           name="color"
           placeholder="Color"
+          value={order.color}
           options={product.colors}
           onChange={onChange}
         />
@@ -48,7 +50,7 @@ const ProductVariants: React.FC<ProductVariantsProps> = ({
             -
           </Button>
         </div>
-        <TextInput name="quantity" onChange={onChange} value={quantity} />
+        <TextInput name="quantity" onChange={onChange} value={order.quantity} />
         <div className="absolute-vertical-center right-0">
           <Button variant="incrementBtn" onClick={onIncrease}>
             +
