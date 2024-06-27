@@ -21,22 +21,6 @@
             "material": "70% cotton 30% polyester"
         },
         {
-            "id": "7",
-            "brand": "Medusa",
-            "type": "T-Shirt",
-            "description": "The Medusa T-Shirt is made from a heavyweight, overdyed jersey, featuring contrasting mesh panels on each side that match the logo embroidery on the back.",
-            "colors": [
-                "Yellow"
-            ],
-            "sizes": [
-                "S",
-                "XL"
-            ],
-            "price": 49.99,
-            "bodyFit": "Regular fit",
-            "material": "70% cotton 30% polyester"
-        },
-        {
             "id": "2",
             "brand": "Medusa",
             "type": "Sweatshirt",
@@ -102,14 +86,100 @@
         {
             "id": "6",
             "brand": "Medusa Accessories",
-            "type": "Bag",
-            "description": "The Medusa Bag is perfect for daily use, offering ample space and a stylish design.",
+            "type": "Bottle",
+            "description": "The Medusa Bottle is perfect for daily use, offering ample space and a stylish design.",
+            "colors": [
+                "White",
+                "Red"
+            ],
+            "price": 19.99,
+            "material": "80% cotton 20% polyester"
+        },
+        {
+            "id": "7",
+            "brand": "Medusa",
+            "type": "T-Shirt",
+            "description": "The Medusa T-Shirt is made from a heavyweight, overdyed jersey, featuring contrasting mesh panels on each side that match the logo embroidery on the back.",
+            "colors": [
+                "Yellow",
+                "Green",
+                "White"
+            ],
+            "sizes": [
+                "S",
+                "XL"
+            ],
+            "price": 79.99,
+            "bodyFit": "Regular fit",
+            "material": "70% cotton 30% polyester"
+        },
+        {
+            "id": "8",
+            "brand": "Medusa",
+            "type": "Socks",
+            "description": "The Medusa Socks are made from a heavyweight, overdyed jersey, featuring contrasting mesh panels on each side that match the logo embroidery on the back.",
+            "colors": [
+                "Yellow"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L",
+                "XL"
+            ],
+            "price": 29.99,
+            "material": "70% cotton 30% polyester"
+        },
+        {
+            "id": "9",
+            "brand": "Medusa Accessories",
+            "type": "Cup",
+            "description": "The Medusa Cup is made from a heavyweight, overdyed jersey, featuring contrasting mesh panels on each side that match the logo embroidery on the back.",
+            "colors": [
+                "Blue",
+                "White"
+            ],
+            "sizes": [
+                "S",
+                "XL"
+            ],
+            "price": 14.99,
+            "bodyFit": "Regular fit",
+            "material": "70% cotton 30% polyester"
+        },
+        {
+            "id": "10",
+            "brand": "Medusa Accessories",
+            "type": "Phonecase",
+            "description": "The Medusa Phone Case is made from a heavyweight, overdyed jersey, featuring contrasting mesh panels on each side that match the logo embroidery on the back.",
             "colors": [
                 "Black",
                 "White"
             ],
-            "price": 59.99,
-            "material": "80% cotton 20% polyester"
+            "sizes": [
+                "S",
+                "M"
+            ],
+            "price": 25.99,
+            "bodyFit": "Regular fit",
+            "material": "70% cotton 30% polyester"
+        },
+        {
+            "id": "11",
+            "brand": "Medusa",
+            "type": "Sweatshirt",
+            "description": "The Medusa Phone Case is made from a heavyweight, overdyed jersey, featuring contrasting mesh panels on each side that match the logo embroidery on the back.",
+            "colors": [
+                "Blue"
+            ],
+            "sizes": [
+                "S",
+                "M",
+                "L"
+            ],
+            "price": 25.99,
+            "bodyFit": "Athletic fit",
+            "material": "90% cotton 10% polyester"
         }
     ]
 }

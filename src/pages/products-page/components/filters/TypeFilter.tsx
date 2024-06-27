@@ -13,7 +13,7 @@ const TypeFilter: React.FC<TypeFilterProps> = ({ title, onChange }) => {
     "backpack",
     "cup",
     "socks",
-    "phone Case",
+    "phonecase",
     "bottle",
   ];
   const capitalizedTypes = types.map((type) =>
@@ -27,6 +27,7 @@ const TypeFilter: React.FC<TypeFilterProps> = ({ title, onChange }) => {
     <div className="hidden sm:block">
       <h4 className="text-start">{title}</h4>
       <div className="flex flex-col child:min-w-[10rem] items-start">
+        <Button variant="category" onClick={() => onChange("")}>Any</Button>
         {capitalizedTypes.map((type: string) => (
           <Button key={type} variant="category" onClick={() => onChange(type)}>
             {type}

@@ -14,7 +14,7 @@ const Button: React.FC<ButtonProps> = ({ variant, name, onClick, children }) => 
     primary: "bg-primary text-secondary hover:bg-gray-100",
     secondary: "bg-secondary text-primary hover:bg-gray-600",
     increment: "text-gray-600",
-    category: "text-secondary",
+    category: "text-secondary text-start",
   };
   return (
     <button
