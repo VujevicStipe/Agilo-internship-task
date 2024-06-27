@@ -36,7 +36,7 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
   //shuffle products
   useEffect(() => {
     const shuffledProducts = shuffle(products).slice(0, 4);
-    setFeaturedProducts(shuffledProducts)
+    setFeaturedProducts(shuffledProducts);
   }, [products]);
 
   //making an order
@@ -62,34 +62,27 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
   }, [order]);
 
   //handle order change
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    if (name === "quantity") {
-      const newQuantity = parseInt(value);
-      setOrder((prevOrder) => ({
-        ...prevOrder,
-        quantity: newQuantity,
-      }));
-    } else {
-      setOrder((prevOrder) => ({ ...prevOrder, [name]: value }));
-    }
-  };
-  const handleIncrease = () => {
-    const newQuantity = order.quantity + 1;
     setOrder((prevOrder) => ({
       ...prevOrder,
-      quantity: newQuantity,
+      [name]: name === 'quantity' ? parseInt(value) : value,
     }));
   };
+
+  const handleIncrease = () => {
+    const newQuantity = order.quantity + 1;
+    handleChange({
+      target: { name: 'quantity', value: newQuantity.toString() }
+    } as React.ChangeEvent<HTMLInputElement>);
+  };
+
   const handleDecrease = () => {
     if (order.quantity > 1) {
       const newQuantity = order.quantity - 1;
-      setOrder((prevOrder) => ({
-        ...prevOrder,
-        quantity: newQuantity,
-      }));
+      handleChange({
+        target: { name: 'quantity', value: newQuantity.toString() }
+      } as React.ChangeEvent<HTMLInputElement>);
     }
   };
 
