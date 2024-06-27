@@ -12,7 +12,7 @@ const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
         <h5 className="uppercase mt-2 font-bold">
           {product.brand} {product.type}
         </h5>
-        <h6>{product.price}</h6>
+        <h6>{product.price}e</h6>
         <div className="flex space-x-2 py-2 pb-4">
           {product?.colors.map((color, index) => (
             <span

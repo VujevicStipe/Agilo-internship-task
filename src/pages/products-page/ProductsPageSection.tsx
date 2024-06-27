@@ -7,9 +7,12 @@ import TypeFilter from "./components/filters/TypeFilter";
 import AtributeFilter from "./components/filters/AtributeFilter";
 
 const ProductsPageSection: React.FC = () => {
-  //fetching products
+  
   const [products, setProducts] = useState<Product[]>();
+
   const apiUrl = import.meta.env.VITE_API_URL;
+
+  //fetching products
   useEffect(() => {
     axios
       .get(`${apiUrl}/products`)
@@ -34,10 +37,6 @@ const ProductsPageSection: React.FC = () => {
     const { name, value } = e.target;
     setFilter({ ...filter, [name]: value });
   };
-
-  useEffect(() => {
-    console.log(filter);
-  }, [filter]);
 
   //filter function
   const filteredProducts = products?.filter((product) => {

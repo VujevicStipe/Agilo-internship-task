@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { SelectInput } from "../../../../components/FormInputs";
 import { capitalize } from "lodash";
 
@@ -22,12 +22,8 @@ const AtributeFilter: React.FC<AtributeFilterProps> = ({ data, onChange }) => {
       .join(" ")
   );
 
-  const bodyFits = ["slim fit", "regular fit", "Athletic fit"]
-  const capitalizedBodyFits = bodyFits.map((bodyFit) => capitalize(bodyFit))
-
-  useEffect(() => {
-    console.log(capitalizedBrands);
-  }, [capitalizedBrands]);
+  const bodyFits = ["slim fit", "regular fit", "Athletic fit"];
+  const capitalizedBodyFits = bodyFits.map((bodyFit) => capitalize(bodyFit));
 
   return (
     <div className="flex mb-4 child:w-[10rem] child:mr-4">

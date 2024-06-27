@@ -14,12 +14,14 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
 }) => {
   if (!id) return null;
 
-  //fetching products
   const [product, setProduct] = useState<Product>();
   const [products, setProducts] = useState<Product[]>();
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>();
+  const [showModal, setShowModal] = useState<boolean>(false);
+
   const apiUrl = import.meta.env.VITE_API_URL;
 
+  //fetching products
   useEffect(() => {
     const definedID = defineId(id);
     axios
@@ -49,7 +51,6 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
   //reset order on route change
   const location = useLocation();
   useEffect(() => {
-    console.log("Pathname changed:", location.pathname);
     setOrder({
       size: "",
       color: "",
@@ -57,37 +58,35 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
     });
   }, [location.pathname]);
 
-  useEffect(() => {
-    console.log(order);
-  }, [order]);
-
   //handle order change
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const { name, value } = e.target;
     setOrder((prevOrder) => ({
       ...prevOrder,
-      [name]: name === 'quantity' ? parseInt(value) : value,
+      [name]: name === "quantity" ? parseInt(value) : value,
     }));
   };
-
   const handleIncrease = () => {
     const newQuantity = order.quantity + 1;
     handleChange({
-      target: { name: 'quantity', value: newQuantity.toString() }
+      target: { name: "quantity", value: newQuantity.toString() },
     } as React.ChangeEvent<HTMLInputElement>);
   };
-
   const handleDecrease = () => {
     if (order.quantity > 1) {
       const newQuantity = order.quantity - 1;
       handleChange({
-        target: { name: 'quantity', value: newQuantity.toString() }
+        target: { name: "quantity", value: newQuantity.toString() },
       } as React.ChangeEvent<HTMLInputElement>);
     }
   };
 
-  //modal after order
-  const [showModal, setShowModal] = useState<boolean>(false);
+  //format total price
+  const formatPrice = (price: number) => {
+    return price.toFixed(2);
+  };
 
   return (
     <div className="container">
@@ -123,7 +122,11 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
         {order.size && <h3>Your Size: {order.size}</h3>}
         {order.color && <h3>Your Color: {order.color}</h3>}
         <h3>Quantity: {order.quantity}</h3>
-        {product && <h3>Total: {product?.price * order.quantity}</h3>}
+        {product && (
+          <h3>
+            Total: {formatPrice(product.price * order.quantity)} e
+          </h3>
+        )}
       </Modal>
     </div>
   );

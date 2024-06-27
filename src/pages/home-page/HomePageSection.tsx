@@ -7,9 +7,13 @@ import FeaturedProducts from "../../components/FeaturedProducts";
 import ProductCard from "../../components/ProductCard";
 
 const HomePageSection: React.FC = () => {
+
   const [products, setProducts] = useState<Product[]>();
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>();
+  
   const apiUrl = import.meta.env.VITE_API_URL;
+
+  //fetching products
   useEffect(() => {
     axios
       .get(`${apiUrl}/products`)
@@ -17,6 +21,7 @@ const HomePageSection: React.FC = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  //shuffle products
   useEffect(() => {
     const shuffledProducts = shuffle(products).slice(0, 4);
     setFeaturedProducts(shuffledProducts);
