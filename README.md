@@ -16,6 +16,7 @@ I spent approximately 4 days on this project, totaling around 20-24 hours of wor
 
 ## Project Structure
 - **Folders and Files**: The project is organized into components, pages, and utilities folders, following a modular structure.
-**Shared Layout**: A shared layout component (`Layout.tsx`) is implemented to maintain consistent header, footer, and navigation across all pages.
+- **Shared Layout**: A shared layout component (`Layout.tsx`) is implemented to maintain consistent header, footer, and navigation across all pages.
+- **JSON Server**: JSON data is managed and served through JSON Server, facilitating dynamic data handling and API-like functionality within the project.
 - **Technologies Used**: React, TypeScript, Tailwind CSS, React Router for navigation.
 - **Considerations**: During development, I focused on creating reusable components, maintaining clean and readable code, and optimizing performance where possible.
