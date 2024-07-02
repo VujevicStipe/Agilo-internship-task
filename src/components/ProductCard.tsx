@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
-  const imagePath = `../../public/assets/${product.type}.png`;
+  const imagePath = `/assets/${product.type}.png`;
   return (
     <Link to={`/product/:${product.id}`}>
       <div className="w-[100%] flex flex-col items-start rounded-lg not-first-child:px-4 text-start">
