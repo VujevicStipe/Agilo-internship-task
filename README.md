@@ -5,6 +5,14 @@ This project is a React TypeScript application styled with Tailwind CSS. It incl
 
 ![mockup-img](./public/assets/Medusa_Mockup.png)
 
+## Hosting
+
+- **Website**: The website is hosted on Netlify at [https://startling-flan-0c74da.netlify.app/](https://startling-flan-0c74da.netlify.app/).
+- **JSON Server**: The JSON Server is hosted on Render at [https://agilowebshop-jsonserver.onrender.com/](https://agilowebshop-jsonserver.onrender.com/).
+
+## Note
+- If content is not loaded, please wait few seconds as the JSON server is hosted on Render and may have delays in responding.
+
 ## Most Challenging Implementation
 The most challenging part of the project was integrating and becoming used to Tailwind CSS. As it was my first time using Tailwind, I needed to educate myself on its approach to styling components and adapting to utility-first CSS methodology.
 
