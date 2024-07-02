@@ -9,7 +9,7 @@ const ProductOverview: React.FC<ProductOverviewProps> = ({
   product,
   children,
 }) => {
-  const imagePath = `../../public/assets/${product.type}.png`;
+  const imagePath = `/assets/${product.type}.png`;
 
   return (
     <div className="w-full h-[64rem] sm:mb-0 sm:h-[40rem] md:h-[40rem] grid grid-cols-1 sm:grid-cols-2">
