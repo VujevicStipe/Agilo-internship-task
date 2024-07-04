@@ -8,6 +8,7 @@ import ProductCard from "../../components/ProductCard";
 import ProductOverview from "./components/productOverview/ProductOverview";
 import ProductVariants from "./components/productOverview/components/ProductVariants";
 import Modal from "../../components/modal/Modal";
+import LottieLoader from "../../components/LottieLoader";
 
 const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
   id,
@@ -18,6 +19,7 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
   const [products, setProducts] = useState<Product[]>();
   const [featuredProducts, setFeaturedProducts] = useState<Product[]>();
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [loading, isLoading] = useState<boolean>(true);
 
   const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -26,8 +28,14 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
     const definedID = defineId(id);
     axios
       .get(`${apiUrl}/products/${definedID}`)
-      .then((res) => setProduct(res.data))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        setProduct(res.data);
+        isLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        isLoading(false);
+      });
 
     axios
       .get(`${apiUrl}/products`)
@@ -107,9 +115,13 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
           title="Customers also bought"
           subTitle="From our Medusa apparel"
         >
-          {featuredProducts?.map((item: Product) => (
-            <ProductCard key={item.id} product={item} />
-          ))}
+          {loading ? (
+            <LottieLoader path="https://lottie.host/09099916-8855-4fdb-b324-62096270ea85/qLtVKviJzC.json" />
+          ) : (
+            featuredProducts?.map((item: Product) => (
+              <ProductCard key={item.id} product={item} />
+            ))
+          )}
         </FeaturedProducts>
       </div>
       <Modal showModal={showModal} setShowModal={setShowModal}>
@@ -123,9 +135,7 @@ const ProductDetailsPageSection: React.FC<{ id: string | undefined }> = ({
         {order.color && <h3>Your Color: {order.color}</h3>}
         <h3>Quantity: {order.quantity}</h3>
         {product && (
-          <h3>
-            Total: {formatPrice(product.price * order.quantity)} e
-          </h3>
+          <h3>Total: {formatPrice(product.price * order.quantity)} e</h3>
         )}
       </Modal>
     </div>

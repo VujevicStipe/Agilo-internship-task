@@ -5,10 +5,11 @@ import axios from "axios";
 import ProductCard from "../../components/ProductCard";
 import TypeFilter from "./components/filters/TypeFilter";
 import AtributeFilter from "./components/filters/AtributeFilter";
+import LottieLoader from "../../components/LottieLoader";
 
 const ProductsPageSection: React.FC = () => {
-  
   const [products, setProducts] = useState<Product[]>();
+  const [loading, isLoading] = useState<boolean>(false);
 
   const apiUrl = import.meta.env.VITE_API_URL;
 
@@ -16,8 +17,14 @@ const ProductsPageSection: React.FC = () => {
   useEffect(() => {
     axios
       .get(`${apiUrl}/products`)
-      .then((res) => setProducts(res.data))
-      .catch((err) => console.log(err));
+      .then((res) => {
+        setProducts(res.data);
+        isLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        isLoading(false);
+      });
   }, []);
 
   //filters
@@ -47,8 +54,7 @@ const ProductsPageSection: React.FC = () => {
         (product.sizes && product.sizes.includes(filter.size))) &&
       (filter.color === "" ||
         (product.colors && product.colors.includes(filter.color))) &&
-      (filter.bodyFit === "" ||
-        product.bodyFit === filter.bodyFit) &&
+      (filter.bodyFit === "" || product.bodyFit === filter.bodyFit) &&
       (filter.brand === "" || product.brand === filter.brand)
     );
   });
@@ -66,9 +72,13 @@ const ProductsPageSection: React.FC = () => {
             <div className="w-full h-[1px] mb-2 bg-gray-400 rounded-lg"></div>
             <AtributeFilter data={filter} onChange={handleFilterChange} />
             <ProductsGrid>
-              {filteredProducts?.map((item, index) => (
-                <ProductCard key={index} product={item} />
-              ))}
+              {loading ? (
+                <LottieLoader path="https://lottie.host/09099916-8855-4fdb-b324-62096270ea85/qLtVKviJzC.json" />
+              ) : (
+                filteredProducts?.map((item, index) => (
+                  <ProductCard key={index} product={item} />
+                ))
+              )}
             </ProductsGrid>
           </div>
         </div>
